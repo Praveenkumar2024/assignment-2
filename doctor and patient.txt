@@ -1,0 +1,32 @@
+create database consultation;
+create tablee doctor
+(
+doctor_id int not null primary key,
+doctor_name varchar(30) not null,
+spacification varchar(30) not null));
+
+create table appoint
+(
+doctor_id int not null,
+patient_id int not null,
+appoint_date date,
+foreign key (doctor_id) references doctor(doctor_id),
+foreign key (patient_id) references patient(patient_id));
+
+create table patient(
+patient_id int primary key,
+patient_name varchar(50) not null,
+patient_age int,
+gender char(10) not null));
+
+create table review(
+doctor_id int not null,
+patient_id int not null,
+rated int not null,
+review varchar(50) not null,
+foreign key (doctor_id) referances doctor(doctor_id),
+foreign key (patient_id) referances patient(patient_id));
+
+
+
+
